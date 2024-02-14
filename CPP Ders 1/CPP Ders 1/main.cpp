@@ -198,7 +198,7 @@ int main() {
 
 // EXAMPLE 6
 // functor
-
+/*
 #include <thread>
 #include <cstdlib>
 #include <chrono>
@@ -230,4 +230,41 @@ int main() {
 	
 	t.join();
 	return 0;
+}
+*/
+
+
+// EXAMPLE 10
+
+#include <thread>
+#include <cstdlib>
+#include <chrono>
+
+void myIncrementFunction() {
+	cout << "increment" << endl;
+}
+
+class A {
+public:
+	void operator()() {
+		cout << "A Calls" << endl;
+	}
+	A(){
+		cout << "default constructor" << endl;
+	}
+	A(const A& p) {
+		cout << "copy constructor" << endl;
+	}
+};
+
+int main() {
+	thread t(&myIncrementFunction);
+	//A a;
+	//A a1 = a;
+
+	//a();
+	//a1();
+	thread t2 = t;
+	t.join();
+	return 0;	
 }
