@@ -235,14 +235,12 @@ int main() {
 
 
 // EXAMPLE 10
-
+/*
 #include <thread>
 #include <cstdlib>
 #include <chrono>
 
-void myIncrementFunction() {
-	cout << "increment" << endl;
-}
+
 
 class A {
 public:
@@ -255,8 +253,13 @@ public:
 	A(const A& p) {
 		cout << "copy constructor" << endl;
 	}
+	~A(){}
 };
-
+void myIncrementFunction() {
+	for(int i = 0;i < 5;i++){
+	cout << "increment" << endl;
+	}
+}
 int main() {
 	thread t(&myIncrementFunction);
 	//A a;
@@ -264,7 +267,38 @@ int main() {
 
 	//a();
 	//a1();
-	thread t2 = t;
-	t.join();
+	thread t2 = move(t);
+	t2.join();
+	t2.detach();
 	return 0;	
+}
+*/
+
+/////////////////////////////////////////////////
+// example 11
+#include <thread>
+
+using namespace std;
+
+void myFunc() {
+	cout << "myFunc" << endl;
+}
+
+int main() {
+	thread t(&myFunc);
+	thread t1(&myFunc);
+	thread t2(&myFunc);
+
+	cout << "Main thread id: " << this_thread::get_id() << endl;
+	cout << "Our t thread id: " << t.get_id() << endl;
+	cout << "Our t1 thread id: " << t.get_id() << endl;
+	cout << "Our t2 thread id: " << t.get_id() << endl;
+
+
+	t.join();
+	t1.join();
+	t2.join();
+
+
+	return 0;
 }

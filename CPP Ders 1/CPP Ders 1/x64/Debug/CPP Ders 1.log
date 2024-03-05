@@ -1,6 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: Ara dizin (x64\Debug\) başka bir projeden (CPP Ders 1.vcxproj) paylaşılan dosyalar içeriyor. Bu, hatalı temizleme ve yeniden oluşturma davranışına neden olabilir.
   main.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(741,5): error MSB6006: "CL.exe" öğesinden 2 koduyla çıkıldı.
-C:\Users\susku\OneDrive\Belgeler\GitHub\Cpp-MultiThreading\CPP Ders 1\CPP Ders 1\main.cpp(268,12): error C2280: 'std::thread::thread(const std::thread &)': silinmiş bir işleve başvurmaya çalışıyor
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(108,5): message : 'std::thread::thread' bildirimine bakın
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\thread(108,5): message : 'std::thread::thread(const std::thread &)': işlev açık olarak silindi
+  CPP Ders 1.vcxproj -> C:\Users\mehme\OneDrive\Belgeler\GitHub\Cpp-MultiThreading\CPP Ders 1\x64\Debug\MultiThreading.exe
